@@ -18,5 +18,22 @@ node::node(int val)
 void insertAtHead(node* head, int val){
     node* n = new node(val);
     n->next = head;
-    head->prev=n;
+    if (head!=NULL)
+    {
+        head->prev=n;
+    }
+}
+void display(node* head){
+    node* temp = head;
+    while (temp->next!=NULL)
+    {
+        cout<<temp->data<<"->";
+    }
+    cout<<endl;
+}
+int main()
+{
+    node* head = NULL;
+    insertAtHead(head , 10 );
+    display(head);
 }
