@@ -24,12 +24,13 @@ void insertAtHead(node* head, int val){
     }
 }
 void display(node* head){
-    node* temp = head;
-    while (temp->next!=NULL)
+    node *temp = head;
+    while (temp!=NULL)
     {
         cout<<temp->data<<"->";
+        temp=temp->next;
     }
-    cout<<endl;
+    cout<<"NULL"<<endl;
 }
 int main()
 {
