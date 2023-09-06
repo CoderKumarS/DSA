@@ -12,12 +12,19 @@ public:
     }
 };
 
+void insertAtHead(node *&head, int val)
+{
+    node *n = new node(val);
+    n->next = head;
+    head=n;
+}
+
 void insertAtTail(node *&head, int val)
 {
     node *n = new node(val);
     if (head == NULL)
     {
-        head = n;
+        insertAtHead(head, val);
         return;
     }
     node *temp = head;
