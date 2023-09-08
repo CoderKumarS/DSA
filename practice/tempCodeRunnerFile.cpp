@@ -112,7 +112,7 @@ int main() {
     cin >> n;
 
     myList.leftShift(n);
-    cout<<3%5;
+
     cout << "Linked list after left shift: ";
     myList.display();
 
