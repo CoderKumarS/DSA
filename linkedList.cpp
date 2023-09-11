@@ -16,7 +16,7 @@ void insertAtHead(node *&head, int val)
 {
     node *n = new node(val);
     n->next = head;
-    head=n;
+    head = n;
 }
 
 void insertAtTail(node *&head, int val)
@@ -34,7 +34,33 @@ void insertAtTail(node *&head, int val)
     }
     temp->next = n;
 }
-
+void deletion(node *&head, int pos, int size)
+{
+    if (pos == 1)
+    {
+        node *todelete = head;
+        head=head->next;
+        return;
+    }
+    if (pos>size)
+    {
+        cout<<"greater than list"<<endl;
+        // display(head);
+        return;
+    }
+    
+    node *temp = head;
+    int count = 2;
+    while (temp->next != NULL&&count!=pos)
+    {
+        temp = temp->next;
+        count++;
+    }
+    node *todelete = temp->next;
+    temp->next = temp->next->next;
+    delete todelete;
+    return;
+}
 void display(node *head)
 {
     node *temp = head;
@@ -49,9 +75,10 @@ void display(node *head)
 int main()
 {
     node *head = NULL;
-    insertAtTail(head, 1);
-    insertAtTail(head, 2);
-    insertAtTail(head, 3);
-    insertAtTail(head, 4);
+    insertAtTail(head, 10);
+    insertAtTail(head, 20);
+    insertAtTail(head, 30);
+    insertAtTail(head, 40);
+    deletion(head, 5,4);
     display(head);
 }
