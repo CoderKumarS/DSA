@@ -88,11 +88,8 @@ int main(){
     inserAtTail(head,1);
     inserAtTail(head,2);
     inserAtTail(head,3);
-    inserAtTail(head,4);
-    inserAtTail(head,5);
+    // inserAtTail(head,4);
+    // inserAtTail(head,5);
     display(head);
-    insertAtHead(head,6);
-    display(head);
-    deletion(head, 2);
-    display(head);
+    return 0;
 }
