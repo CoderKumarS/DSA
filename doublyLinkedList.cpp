@@ -23,7 +23,6 @@ void insertAtHead(node *&head, int val)
     if (head != NULL)
     {
         head->prev = n;
-        return;
     }
     head = n;
 }
@@ -46,11 +45,17 @@ void insertAtTail(node *&head, int val)
     n->prev = temp;
 }
 // 3. Delete in Linked list
+void deleteAtHead(node*&head){
+    node* todelete = head;
+    head=head->next;
+    head->prev=NULL;
+    delete todelete;//deallocate memory
+}
 void deletion(node *&head, int pos)
 {
     if (pos==1)
     {
-        // deleteAtHead(head);
+        deleteAtHead(head);
         return;
     }
     
@@ -88,6 +93,6 @@ int main()
     insertAtTail(head, 20);
     insertAtTail(head, 30);
     insertAtTail(head, 40);
-    deletion(head, 2);
+    deletion(head, 4);
     display(head);
 }
