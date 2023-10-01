@@ -1,4 +1,4 @@
-// queue using linked list
+// queue using array
 /*
 #include<iostream>
 using namespace std;
