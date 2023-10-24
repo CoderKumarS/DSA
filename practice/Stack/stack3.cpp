@@ -1,6 +1,8 @@
 #include<iostream>
 #include<bits\stdc++.h>
 using namespace std;
+
+// using function
 stack<int> copyStack(stack<int> &in){
     stack<int> temp;
     while(!in.empty()){
@@ -20,13 +22,29 @@ stack<int> copyStack(stack<int> &in){
     }
     return result;
 }
+
+// using recursion
+void copyStack(stack<int> &st,stack<int> &result){
+    if(st.empty()) return ;
+    int cur=st.top();
+    st.pop();
+    copyStack(st,result);
+    result.push(cur);
+}
+
 int main(){
     stack<int> st;
+    stack<int> res;
     st.push(5);
     st.push(15);
     st.push(25);
     st.push(35);
-    stack<int> res = copyStack(st);
+    //using function
+    // res = copyStack(st);
+
+    //using recursion
+    copyStack(st,res);
+
     while (!res.empty())
     {
         int cur= res.top() ;
