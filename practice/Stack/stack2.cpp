@@ -7,10 +7,6 @@ public:
     int data;
     Node *next;
     Node(int data) : data(data), next(NULL) {}
-    // Node(int data){
-    //     this->data=data;
-    //     this->next=NULL;
-    // }
 };
 
 class Stack
@@ -69,17 +65,17 @@ public:
 int main()
 {
     Stack st(5);
-    cout <<"Size: "<< st.size() << "\n";
+    cout << "Size: " << st.size() << "\n";
     st.push(54);
     st.push(44);
     st.push(34);
     st.push(24);
     st.pop();
-    cout <<"Size: "<< st.size() << "\n";
+    cout << "Size: " << st.size() << "\n";
     st.push(14);
     st.push(4);
     st.push(0);
-    cout <<"Size: "<< st.size() << "\n";
+    cout << "Size: " << st.size() << "\n";
     while (!st.isEmpty())
     {
         cout << st.Top() << " ";
