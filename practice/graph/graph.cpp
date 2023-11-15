@@ -22,5 +22,17 @@ class graph{
 		}
 };
 int main(){
+	int n;
+	cin>>n;
+	int m;
+	cin>>m;
+	
+	graph g;
+	for (int i=0;i<m;i++){
+		int u,v;
+		cin>>u>>v;
+		g.addEdge(u,v,0);
+	}
+	g.printAdjacent();
 	return 0;
 }
